@@ -4,8 +4,13 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import React, { useRef, useState, useEffect } from 'react';
-import { GitHubCalendar } from 'react-github-calendar';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
+
+const GitHubCalendar = dynamic(
+    () => import('react-github-calendar').then((mod) => mod.GitHubCalendar),
+    { ssr: false }
+);
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
