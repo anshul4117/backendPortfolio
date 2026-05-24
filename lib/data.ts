@@ -1,34 +1,56 @@
 import { IProject } from '@/types';
 
 export const GENERAL_INFO = {
-    email: 'tasmirolislam@gmail.com',
+    email: 'anshul41171@gmail.com',
 
-    emailSubject: "Let's collaborate on a project",
-    emailBody: 'Hi Tajmirul, I am reaching out to you because...',
+    emailSubject: "Let's collaborate on a backend project",
+    emailBody: 'Hi Anshul, I am reaching out to you because...',
 
-    oldPortfolio: 'https://www.legacy.me.toinfinite.dev',
-    upworkProfile: 'https://www.upwork.com/freelancers/tajmirul',
+    oldPortfolio: '',
+    upworkProfile: '',
 };
 
 export const SOCIAL_LINKS = [
-    { name: 'github', url: 'https://github.com/Tajmirul' },
-    { name: 'linkedin', url: 'https://www.linkedin.com/in/tajmirul' },
-    { name: 'facebook', url: 'https://www.facebook.com/tajmirul.2000' },
-    { name: 'Old Version', url: GENERAL_INFO.oldPortfolio },
+    { name: 'github', url: 'https://github.com/anshul4117' },
+    { name: 'linkedin', url: 'https://www.linkedin.com/in/anshul-ab7135245/' },
+    { name: 'leetcode', url: 'https://leetcode.com/u/Anshul101/' },
+    { name: 'hashnode', url: 'https://hashnode.com/@anshul41171' },
 ];
 
 export const MY_STACK = {
-    frontend: [
+    languages: [
+        {
+            name: 'C',
+            icon: '/logo/c.svg',
+        },
+        {
+            name: 'C++',
+            icon: '/logo/cpp.svg',
+        },
+        {
+            name: 'Java',
+            icon: '/logo/java.svg',
+        },
         {
             name: 'JavaScript',
             icon: '/logo/js.png',
         },
         {
-            name: 'TypeScript',
-            icon: '/logo/ts.png',
+            name: 'Python',
+            icon: '/logo/python.svg',
         },
         {
-            name: 'React',
+            name: 'SQL',
+            icon: '/logo/sql.svg',
+        },
+    ],
+    'technologies & frameworks': [
+        {
+            name: 'Node.js',
+            icon: '/logo/node.svg',
+        },
+        {
+            name: 'React.js',
             icon: '/logo/react.png',
         },
         {
@@ -36,66 +58,16 @@ export const MY_STACK = {
             icon: '/logo/next.png',
         },
         {
-            name: 'Redux',
-            icon: '/logo/redux.png',
-        },
-        {
-            name: 'Tailwind CSS',
-            icon: '/logo/tailwind.png',
-        },
-        {
-            name: 'GSAP',
-            icon: '/logo/gsap.png',
-        },
-        {
-            name: 'Framer Motion',
-            icon: '/logo/framer-motion.png',
-        },
-        {
-            name: 'Sass',
-            icon: '/logo/sass.png',
-        },
-        {
-            name: 'Bootstrap',
-            icon: '/logo/bootstrap.svg',
-        },
-    ],
-    backend: [
-        {
-            name: 'Node.js',
-            icon: '/logo/node.png',
-        },
-        {
-            name: 'NestJS',
-            icon: '/logo/nest.svg',
-        },
-        {
             name: 'Express.js',
             icon: '/logo/express.png',
-        },
-    ],
-    database: [
-        {
-            name: 'MySQL',
-            icon: '/logo/mysql.svg',
-        },
-        {
-            name: 'PostgreSQL',
-            icon: '/logo/postgreSQL.png',
         },
         {
             name: 'MongoDB',
             icon: '/logo/mongodb.svg',
         },
         {
-            name: 'Prisma',
-            icon: '/logo/prisma.png',
-        },
-    ],
-    tools: [
-        {
-            name: 'Git',
-            icon: '/logo/git.png',
+            name: 'Redis',
+            icon: '/logo/redis.svg',
         },
         {
             name: 'Docker',
@@ -105,204 +77,215 @@ export const MY_STACK = {
             name: 'AWS',
             icon: '/logo/aws.png',
         },
+        {
+            name: 'Socket.io',
+            icon: '/logo/socket-io.svg',
+        },
+        {
+            name: 'MCP Server',
+            icon: '/logo/mcp.svg',
+        },
+        {
+            name: 'Apache Kafka',
+            icon: '/logo/kafka.svg',
+        },
+        {
+            name: 'Tailwind CSS',
+            icon: '/logo/tailwind.png',
+        },
+        {
+            name: 'Bootstrap',
+            icon: '/logo/bootstrap.svg',
+        },
+    ],
+    tools: [
+        {
+            name: 'Git & GitHub',
+            icon: '/logo/git.png',
+        },
+        {
+            name: 'Postman',
+            icon: '/logo/postman.svg',
+        },
+        {
+            name: 'Redis Insight',
+            icon: '/logo/redis-insight.svg',
+        },
+        {
+            name: 'MS SQL Server',
+            icon: '/logo/mssql.svg',
+        },
+        {
+            name: 'VS Code',
+            icon: '/logo/vscode.svg',
+        },
+        {
+            name: 'Cursor',
+            icon: '/logo/cursor.svg',
+        },
+        {
+            name: 'Antigravity',
+            icon: '/logo/antigravity.svg',
+        },
+        {
+            name: 'Claude AI',
+            icon: '/logo/claude.svg',
+        },
+        {
+            name: 'Figma',
+            icon: '/logo/figma.svg',
+        },
+        {
+            name: 'Stitch AI',
+            icon: '/logo/stitch.png',
+        },
     ],
 };
 
 export const PROJECTS: IProject[] = [
     {
-        title: 'Electro EV',
-        slug: 'electro-ev',
-        liveUrl: 'https://electroev.co.uk/',
-        year: 2025,
+        title: 'Dev Tinder',
+        slug: 'dev-tinder',
+        liveUrl: 'https://github.com/anshul4117',
+        year: 2024,
         description: `
-      A complete agency portfolio platform built for Electro EV to showcase their services, blog content, and product offerings. <br/> <br/>
+      A full-stack developer networking platform inspired by Tinder, designed to connect developers based on their technical interests, experience level, and collaboration goals. <br/> <br/>
       
       Key Features:<br/>
       <ul>
-        <li>🛠️ Service Display System: Interactive service showcase with synchronized sliders</li>
-        <li>✍️ Blog Management: SEO-friendly blog with categorization and search</li>
-        <li>🛒 Product Catalog: Organized product display with filtering capabilities</li>
-        <li>📱 Fully Responsive: Optimized for all device sizes</li>
-        <li>⚡ Fast Performance: Optimized Next.js frontend with ISR (Incremental Static Regeneration)</li>
+        <li>🔥 Developer Matching: Smart matching system connecting developers with complementary skills.</li>
+        <li>👤 Profile Management: Detailed user profiles showcasing bio, experience, and interests.</li>
+        <li>💬 Real-Time Interaction: Instant chat for match interactions built with Socket.io.</li>
+        <li>🛡️ Secure Authentication: Safe session management using JWT cookies.</li>
       </ul><br/>
       
       Technical Highlights:
       <ul>
-        <li>Implemented complex slider synchronization logic using Swiper.js</li>
-        <li>Customized Payload CMS admin panel for intuitive content management</li>
-        <li>Developed reusable UI components with shadcn for design consistency</li>
-        <li>Configured efficient data fetching strategies in Next.js</li>
+        <li>Designed robust database collections and relationships in MongoDB/Mongoose.</li>
+        <li>Integrated Redis caching to store session tokens and frequent profile lookups.</li>
+        <li>Containerized backend services with Docker to streamline local environment setup.</li>
       </ul>
       `,
         role: `
-      Full-Stack Developer <br/>
-      Owned the entire development lifecycle:
+      Backend & API Developer <br/>
+      Engineered the entire backend service:
       <ul>
-        <li>✅ Backend: Configured Payload CMS with custom collections for services, blogs, and products</li>
-        <li>🎨 Frontend: Built all UI components using Tailwind CSS and shadcn</li>
-        <li>🔄 State Management: Implemented client-side data fetching and caching</li>
-        <li>🖥️ CMS Customization: Created admin interfaces for content editors</li>
-        <li>🚀 Deployment: Set up CI/CD pipeline for Vercel hosting</li>
-        <li>🧩 Third-Party Integration: Added Swiper.js for interactive sliders</li>
+        <li>✅ API Development: Developed secure REST API endpoints with Express.js.</li>
+        <li>✅ Database: Created scalable MongoDB models and queries.</li>
+        <li>✅ Caching: Handled caching of critical data points with Redis.</li>
+        <li>✅ Real-Time: Set up instant message event loops using Socket.io.</li>
       </ul>
       `,
         techStack: [
-            'Next.js',
-            'Payload CMS',
-            'Tailwind CSS',
-            'shadcn',
-            'Swiper.js',
-            'React Hook Form',
-            'Vercel',
-        ],
-        thumbnail: '/projects/thumbnail/mti-electronics.webp',
-        longThumbnail: '/projects/long/mti-electronics.webp',
-        images: [
-            '/projects/images/mti-electronics-1.webp',
-            '/projects/images/mti-electronics-2.webp',
-        ],
-    },
-    {
-        title: 'Epikcart',
-        slug: 'epikcart',
-        techStack: [
-            'React',
-            'Redux',
-            'React i18n',
-            'Tailwind CSS',
-            'Framer Motion',
-            'debouncing',
-            'Api Integration',
-        ],
-        thumbnail: '/projects/thumbnail/epikcart.jpg',
-        longThumbnail: '/projects/long/epikcart.jpg',
-        images: [
-            '/projects/images/epikcart-1.png',
-            '/projects/images/epikcart-2.png',
-            '/projects/images/epikcart-3.png',
-            '/projects/images/epikcart-4.png',
-            '/projects/images/epikcart-5.png',
-        ],
-        liveUrl: 'https://demo.epikcart.siphertech.com/',
-        year: 2023,
-        description: `Epikcart is a feature-rich, scalable e-commerce platform tailored for large businesses. It features dynamic product filtering, multi-language support with RTL, advanced inventory management, order tracking, and refund systems, offering a comprehensive solution for multi-vendor operations.`,
-        role: `As the frontend developer in a team of five, I: <br/>
-        - Built the frontend from scratch using React, Redux, RTK Query, and Tailwind CSS.<br/>
-        - Developed dynamic filtering logic for the product search page with admin-configurable parameters.<br/>
-        - Integrated multi-language support with React i18n, including RTL handling.<br/>
-        - Delivered a responsive, user-friendly interface in collaboration with the UI/UX designer.`,
-    },
-    {
-        title: 'Resume Roaster',
-        slug: 'resume-roaster',
-        techStack: [
-            'GPT-4',
-            'Next.js',
-            'Postgressql',
-            'Prisma',
-            'Tailwind CSS',
-        ],
-        thumbnail: '/projects/thumbnail/resume-roaster.jpg',
-        longThumbnail: '/projects/long/resume-roaster.jpg',
-        images: [
-            '/projects/images/resume-roaster-1.png',
-            '/projects/images/resume-roaster-2.png',
-            '/projects/images/resume-roaster-3.png',
-        ],
-        liveUrl: 'https://resume-roaster.vercel.app/',
-        year: 2023,
-        description:
-            'Resume Roaster is a web application designed to provide tailored resume feedback and professional writing services. Built with Next.js, PostgreSQL, Prisma, and Tailwind CSS, it integrates GPT-4 for AI-powered recommendations. The platform also includes peer-to-peer reviews with a points-based system, fostering a collaborative and engaging experience. Targeting freshers, experienced professionals, and programmers, it helps optimize resumes for job-specific success.',
-        role: `As the sole developer and business owner, I:<br/>
-        - Designed and developed the platform end-to-end using Next.js, PostgreSQL, Prisma, and Tailwind CSS.<br/>
-        - Integrated GPT-4 for AI-driven feedback and insights.<br/>
-        - Implemented complex SQL queries, including one to identify the top two resumes based on user points.`,
-    },
-    {
-        title: 'Real Estate',
-        slug: 'property-pro',
-        techStack: [
+            'Node.js',
+            'Express.js',
             'React.js',
-            'Redux',
-            'Tailwind CSS',
-            'React i18n',
-            'Framer Motion',
+            'MongoDB',
+            'Redis',
+            'Socket.io',
+            'Docker',
         ],
-        thumbnail: '/projects/thumbnail/property-pro.jpg',
-        longThumbnail: '/projects/long/property-pro.jpg',
+        thumbnail: '/projects/thumbnail/dev-tinder.png',
+        longThumbnail: '/projects/long/dev-tinder.png',
         images: [
-            '/projects/images/property-pro-1.png',
-            '/projects/images/property-pro-2.png',
-            '/projects/images/property-pro-3.png',
+            '/projects/images/dev-tinder-1.png',
         ],
-        liveUrl: 'https://demo.propertypro.siphertech.com/',
-        year: 2023,
-        description:
-            'PropertyPro is a real estate management platform offering users a seamless experience to explore, manage, and view property listings. The application emphasizes accessibility and responsive design, ensuring a smooth interface across devices.',
-        role: `As the frontend developer, I:<br/>
-        - Built the frontend using React, Redux, RTK Query, Framer Motion, and Tailwind CSS.<br/>
-        - Integrated dynamic state management for efficient handling of property data.<br/>
-        - Implemented multi-language support with React i18n to cater to diverse audiences.<br/>
-        - Enhanced user interaction with animations and transitions using Framer Motion.`,
     },
     {
-        title: 'Consulting Finance',
-        slug: 'crenotive',
-        techStack: ['HTML', 'CSS & SCSS', 'Javascript', 'Bootstrap'],
-        thumbnail: '/projects/thumbnail/consulting-finance.jpg',
-        longThumbnail: '/projects/long/consulting-finance.jpg',
-        images: [
-            '/projects/images/consulting-finance-1.png',
-            '/projects/images/consulting-finance-2.png',
-            '/projects/images/consulting-finance-3.png',
+        title: 'MyBlog Application',
+        slug: 'my-blog',
+        liveUrl: 'https://github.com/anshul4117',
+        year: 2024,
+        description: `
+      A scalable blogging platform that enables users to create, manage, and explore articles with secure authentication and optimized performance. <br/> <br/>
+      
+      Key Features:<br/>
+      <ul>
+        <li>🔑 Role-based Management: Admin & User levels to manage and publish posts.</li>
+        <li>⚡ Redis Caching: Speed up reads for articles, reducing DB query overhead.</li>
+        <li>🔒 Secure Access: Secure signup/login utilizing JWT auth and bcrypt hashing.</li>
+        <li>📱 Responsive UI: Highly responsive interface designed for all screens.</li>
+      </ul><br/>
+      
+      Technical Highlights:
+      <ul>
+        <li>Implemented Redis-based cache invalidation to maintain post consistency.</li>
+        <li>Optimized database operations and queries for efficient article listing.</li>
+        <li>Built out clean user profiles and modern design layouts in React.</li>
+      </ul>
+      `,
+        role: `
+      Backend Developer <br/>
+      Owned end-to-end design and code:
+      <ul>
+        <li>✅ Server-side: Set up Express and database integrations.</li>
+        <li>✅ Caching: Built cache-aside pattern with Redis.</li>
+        <li>✅ Frontend: Coded responsive pages using React.js.</li>
+      </ul>
+      `,
+        techStack: [
+            'Node.js',
+            'Express.js',
+            'React.js',
+            'MongoDB',
+            'Redis',
+            'CSS',
         ],
-        sourceCode: 'https://github.com/Tajmirul/crenotive',
-        liveUrl: 'https://crenotive.netlify.app/',
-        year: 2023,
-        description:
-            'I developed Crenotive, a portfolio website using Html, SASS, and jQuery to showcase services and expertise. The design focuses on responsive user experience and effective presentation of professional achievements.',
-        role: ``,
-    },
-    {
-        title: 'devLinks',
-        slug: 'devLinks',
-        techStack: ['Next.js', 'Formik', 'Drag & Drop', 'Tailwind CSS'],
-        thumbnail: '/projects/thumbnail/devLinks.jpg',
-        longThumbnail: '/projects/long/devLinks.jpg',
+        thumbnail: '/projects/thumbnail/my-blog.png',
+        longThumbnail: '/projects/long/my-blog.png',
         images: [
-            '/projects/images/devLinks-1.png',
-            '/projects/images/devLinks-2.png',
-            '/projects/images/devLinks-3.png',
+            '/projects/images/my-blog-1.png',
         ],
-        sourceCode: 'https://github.com/Tajmirul/devsLink',
-        liveUrl: 'https://devlinks-demo.vercel.app/auth/signin',
-        year: 2023,
-        description: `One of the most challenging projects in Frontend Mentor.<br/><br/>
-
-            I developed a LinkSharing App as part of the Frontend Mentor challenge, utilizing React, Redux, and Tailwind CSS to create a responsive and feature-rich platform. The app allows users to share, save, and explore links, with a focus on intuitive design and smooth navigation. Advanced state management ensures efficient data handling for user interactions.`,
-        role: ``,
     },
 ];
 
 export const MY_EXPERIENCE = [
     {
-        title: 'Software Engineer (Frontend)',
-        company: 'Strativ AB',
-        duration: 'Dec 2024 - Present',
+        title: 'NodeJS Developer Intern',
+        company: 'ESSENTIAL SOFT TECH, Meerut',
+        duration: 'Feb 2024 – Apr 2024',
+        description: [
+            'Developed and debugged backend core services using Node.js, MongoDB, Redis, Docker, and AWS',
+            'Built user and company management APIs with CRUD operations using Express.js and Socket.io',
+            'Worked on scalable backend architecture and real-time communication features',
+        ],
     },
     {
-        title: 'Frontend Developer',
-        company: 'Epikcoders',
-        duration: 'Oct 2023 - Nov 2024',
+        title: 'Backend Developer Intern',
+        company: 'AP Mobility India Pvt Ltd, Meerut',
+        duration: 'Feb 2024 – Apr 2024',
+        description: [
+            'Gained hands-on experience in backend development, API design, and database management',
+            'Developed scalable backend applications using Express.js, MongoDB, and Redis',
+            'Collaborated with frontend developers to integrate user-facing components with backend services',
+        ],
+    },
+];
+
+export const EDUCATION = [
+    {
+        degree: 'Master of Computer Applications (MCA)',
+        institution: 'Meerut Institute of Engineering and Technology',
+        duration: '2025 – Present',
     },
     {
-        title: 'Frontend Engineer',
-        company: 'Anchorblock Technology',
-        duration: 'Oct 2022 - Sep 2023',
+        degree: 'Bachelor of Computer Applications (BCA)',
+        institution: 'IIMT University, Meerut',
+        duration: '2021 – 2024',
+    },
+];
+
+export const CERTIFICATIONS = [
+    {
+        title: 'Build Real World AI Applications with Gemini and Imagen',
+        issuer: 'Google Cloud',
     },
     {
-        title: 'Frontend Developer (Part-time)',
-        company: 'Branex IT',
-        duration: 'Jan 2022 - Oct 2022',
+        title: 'AI Impact Summit Buildathon',
+        issuer: 'GUVI & HCL',
+    },
+    {
+        title: 'GDG Cloud New Delhi HackFest 2.0',
+        issuer: 'GDG New Delhi',
     },
 ];

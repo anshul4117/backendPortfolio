@@ -7,17 +7,26 @@ interface RepoStats {
 }
 
 const Footer = async () => {
-    const repoStats = await fetch(
-        'https://api.github.com/repos/tajmirul/portfolio-2.0',
-        {
-            next: {
-                revalidate: 60 * 60, // 1 hour
-            },
-        },
-    );
+    let stargazers_count = 0;
+    let forks_count = 0;
 
-    const { stargazers_count, forks_count } =
-        (await repoStats.json()) as RepoStats;
+    try {
+        const repoStats = await fetch(
+            'https://api.github.com/repos/anshul4117/backendPortfolio',
+            {
+                next: {
+                    revalidate: 60 * 60, // 1 hour
+                },
+            },
+        );
+        if (repoStats.ok) {
+            const data = await repoStats.json() as RepoStats;
+            stargazers_count = data.stargazers_count;
+            forks_count = data.forks_count;
+        }
+    } catch (e) {
+        console.error('Failed to fetch repo stats:', e);
+    }
 
     return (
         <footer className="text-center pb-5" id="contact">
@@ -32,11 +41,11 @@ const Footer = async () => {
 
                 <div className="">
                     <a
-                        href="https://github.com/Tajmirul/portfolio-2.0"
+                        href="https://github.com/anshul4117/backendPortfolio"
                         target="_blank"
                         className="leading-none text-muted-foreground hover:underline hover:text-white"
                     >
-                        Design & built by Tajmirul Islam
+                        Built by Anshul
                         <div className="flex items-center justify-center gap-5 pt-1">
                             <span className="flex items-center gap-2">
                                 <Star size={18} /> {stargazers_count}
@@ -46,21 +55,6 @@ const Footer = async () => {
                             </span>
                         </div>
                     </a>
-
-                    {/* Note: If you are not Tajmirul, use this copyright message instead */}
-                    {/* <a href='https://www.me.toinfinite.dev/' className="leading-none text-muted-foreground hover:underline hover:text-white">
-                        Design & built by Tajmirul Islam <br />
-                        Revised by YOUR NAME
-
-                        <div className="flex items-center justify-center gap-5 pt-1">
-                            <span className='flex items-center gap-2'>
-                                <Star size={14} /> {stargazers_count}
-                            </span>
-                            <span className='flex items-center gap-2'>
-                                <GitFork size={14} /> {forks_count}
-                            </span>
-                        </div>
-                    </a> */}
                 </div>
             </div>
         </footer>

@@ -1,6 +1,6 @@
 <svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="64" cy="28" rx="40" ry="16" fill="#00758F"/>
-    <path d="M24 28v20c0 8.8 17.9 16 40 16s40-7.2 40-16V28" fill="#00758F" opacity="0.8"/>
-    <path d="M24 48v20c0 8.8 17.9 16 40 16s40-7.2 40-16V48" fill="#00758F" opacity="0.6"/>
-    <path d="M24 68v20c0 8.8 17.9 16 40 16s40-7.2 40-16V68" fill="#00758F" opacity="0.4"/>
+    <ellipse cx="64" cy="30" rx="36" ry="14" fill="#006680" stroke="#00C1D4" stroke-width="4"/>
+    <path d="M28 30v24c0 7.7 16.1 14 36 14s36-6.3 36-14V30" fill="none" stroke="#00C1D4" stroke-width="4"/>
+    <path d="M28 54v24c0 7.7 16.1 14 36 14s36-6.3 36-14V54" fill="none" stroke="#00C1D4" stroke-width="4"/>
+    <path d="M28 78v24c0 7.7 16.1 14 36 14s36-6.3 36-14V78" fill="none" stroke="#00C1D4" stroke-width="4"/>
 </svg>
