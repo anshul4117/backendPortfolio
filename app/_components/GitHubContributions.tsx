@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import React, { useRef, useState, useEffect } from 'react';
 import { GitHubCalendar } from 'react-github-calendar';
+import Image from 'next/image';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -172,10 +173,12 @@ const GitHubContributions = () => {
                             </div>
                             {userStats && (
                                 <div className="mt-8 pt-4 border-t border-border flex items-center gap-3">
-                                    <img
+                                    <Image
                                         src={userStats.avatar_url}
                                         alt="GitHub Avatar"
-                                        className="w-10 h-10 rounded-full border border-primary"
+                                        width={40}
+                                        height={40}
+                                        className="rounded-full border border-primary"
                                     />
                                     <div>
                                         <p className="font-semibold text-foreground leading-none">{userStats.name || 'Anshul'}</p>
