@@ -197,39 +197,56 @@ export const PROJECTS: IProject[] = [
         liveUrl: 'https://github.com/anshul4117',
         year: 2024,
         description: `
-      A scalable blogging platform that enables users to create, manage, and explore articles with secure authentication and optimized performance. <br/> <br/>
+      A production-grade, full-stack blogging platform built with a modern React 19 frontend and a hardened Express 5 backend. Designed for scalability, security, and developer experience from day one. <br/> <br/>
       
       Key Features:<br/>
       <ul>
-        <li>🔑 Role-based Management: Admin & User levels to manage and publish posts.</li>
-        <li>⚡ Redis Caching: Speed up reads for articles, reducing DB query overhead.</li>
-        <li>🔒 Secure Access: Secure signup/login utilizing JWT auth and bcrypt hashing.</li>
-        <li>📱 Responsive UI: Highly responsive interface designed for all screens.</li>
+        <li>🔑 Role-based Management: Admin & User levels to manage and publish posts with fine-grained access control.</li>
+        <li>⚡ Redis Caching: Accelerated reads with ioredis-powered cache-aside pattern, reducing DB query overhead.</li>
+        <li>🔒 Secure Access: JWT authentication with bcrypt password hashing and security hardening via Helmet, CORS, rate-limiting, and XSS protection.</li>
+        <li>📱 Responsive UI: Premium, animated interface built with React 19, Tailwind CSS 4, shadcn/ui (Radix UI), Framer Motion, and Spline 3D visuals.</li>
+        <li>📊 Analytics Dashboard: Interactive charts and insights powered by Recharts.</li>
+        <li>🖼️ Cloud Media: Image uploads handled via Cloudinary + Multer with optimized delivery.</li>
+        <li>📧 Email Notifications: Transactional emails via Nodemailer for account verification and updates.</li>
+        <li>📝 Form Validation: Robust client-side validation using React Hook Form + Zod schemas.</li>
+        <li>📖 API Documentation: Auto-generated Swagger/OpenAPI docs for every endpoint.</li>
       </ul><br/>
       
       Technical Highlights:
       <ul>
-        <li>Implemented Redis-based cache invalidation to maintain post consistency.</li>
-        <li>Optimized database operations and queries for efficient article listing.</li>
-        <li>Built out clean user profiles and modern design layouts in React.</li>
+        <li>Built the frontend with React 19 + Vite 7 for blazing-fast HMR and optimized builds, using React Router 7 for client-side routing.</li>
+        <li>Implemented Redis-based cache invalidation with ioredis to maintain post consistency at scale.</li>
+        <li>Structured logging with Pino for production-grade observability and debugging.</li>
+        <li>Containerized the entire stack with Docker & Docker Compose for reproducible local and CI environments.</li>
+        <li>Comprehensive test coverage with Jest + Supertest for API integration and unit tests.</li>
+        <li>Optimized MongoDB queries with Mongoose for efficient article listing and aggregation pipelines.</li>
       </ul>
       `,
         role: `
-      Backend Developer <br/>
-      Owned end-to-end design and code:
+      Full-Stack Developer <br/>
+      Owned end-to-end architecture, design, and implementation:
       <ul>
-        <li>✅ Server-side: Set up Express and database integrations.</li>
-        <li>✅ Caching: Built cache-aside pattern with Redis.</li>
-        <li>✅ Frontend: Coded responsive pages using React.js.</li>
+        <li>✅ Backend: Architected Express 5 API with MongoDB, Redis caching, JWT auth, and production security middleware (Helmet, CORS, rate-limit, XSS).</li>
+        <li>✅ Frontend: Built a premium React 19 + Vite 7 SPA with Tailwind CSS 4, shadcn/ui components, Framer Motion animations, and Spline 3D visuals.</li>
+        <li>✅ Media & Email: Integrated Cloudinary for image management and Nodemailer for transactional emails.</li>
+        <li>✅ DevOps: Dockerized services with Docker Compose, structured logging with Pino, and Swagger API documentation.</li>
+        <li>✅ Testing: Built comprehensive test suites using Jest + Supertest for reliable CI/CD.</li>
       </ul>
       `,
         techStack: [
+            'React 19',
+            'Vite',
+            'Tailwind CSS',
+            'shadcn/ui',
+            'Framer Motion',
             'Node.js',
-            'Express.js',
-            'React.js',
+            'Express 5',
             'MongoDB',
             'Redis',
-            'CSS',
+            'Docker',
+            'JWT',
+            'Cloudinary',
+            'Jest',
         ],
         thumbnail: '/projects/thumbnail/my-blog.png',
         longThumbnail: '/projects/long/my-blog.png',
