@@ -1,5 +1,6 @@
 'use client';
 import SectionTitle from '@/components/SectionTitle';
+import FireIcon from '@/components/icons/FireIcon';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
@@ -14,11 +15,39 @@ const GitHubCalendar = dynamic(
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
+/**
+ * Calculate the maximum contribution streak from the contribution data.
+ * A streak is consecutive days with count > 0.
+ */
+function calculateMaxStreak(contributions: { date: string; count: number }[]): number {
+    if (!contributions || contributions.length === 0) return 0;
+
+    // Sort by date ascending
+    const sorted = [...contributions].sort(
+        (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+    );
+
+    let maxStreak = 0;
+    let currentStreak = 0;
+
+    for (const day of sorted) {
+        if (day.count > 0) {
+            currentStreak++;
+            maxStreak = Math.max(maxStreak, currentStreak);
+        } else {
+            currentStreak = 0;
+        }
+    }
+
+    return maxStreak;
+}
+
 const GitHubContributions = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const [userStats, setUserStats] = useState<any>(null);
     const [languages, setLanguages] = useState<any[]>([]);
     const [totalStars, setTotalStars] = useState(0);
+    const [maxStreak, setMaxStreak] = useState(0);
     const [loading, setLoading] = useState(true);
 
     useGSAP(
@@ -98,6 +127,18 @@ const GitHubContributions = () => {
 
                     setLanguages(langPercentages);
                 }
+
+                // Fetch contribution data for max streak calculation
+                const contribRes = await fetch(
+                    'https://github-contributions-api.jogruber.de/v4/anshul4117?y=last'
+                );
+                if (contribRes.ok) {
+                    const contribData = await contribRes.json();
+                    if (contribData.contributions) {
+                        const streak = calculateMaxStreak(contribData.contributions);
+                        setMaxStreak(streak);
+                    }
+                }
             } catch (error) {
                 console.error('Error fetching GitHub data:', error);
             } finally {
@@ -122,9 +163,28 @@ const GitHubContributions = () => {
                 <div className="space-y-10">
                     {/* Interactive Calendar Card */}
                     <div className="github-item bg-background-light border border-border p-8 rounded-xl flex flex-col items-center">
-                        <p className="text-xl font-anton uppercase tracking-wider mb-6 text-muted-foreground self-start">
-                            Contribution Calendar
-                        </p>
+                        <div className="w-full flex items-center justify-between mb-6">
+                            <p className="text-xl font-anton uppercase tracking-wider text-muted-foreground">
+                                Contribution Calendar
+                            </p>
+                            {/* Max Streak Badge */}
+                            {!loading && maxStreak > 0 && (
+                                <div className="flex items-center gap-2 bg-gradient-to-r from-orange-500/10 to-yellow-500/10 border border-orange-500/30 rounded-full px-4 py-2 streak-badge">
+                                    <FireIcon size={28} />
+                                    <div className="flex flex-col leading-none">
+                                        <span className="text-xs uppercase tracking-wider text-orange-400/80 font-medium">
+                                            Max Streak
+                                        </span>
+                                        <span className="text-xl font-anton text-orange-400 leading-tight">
+                                            {maxStreak} <span className="text-sm font-roboto-flex font-normal text-orange-400/70">days</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            )}
+                            {loading && (
+                                <div className="h-12 w-36 bg-border rounded-full animate-pulse"></div>
+                            )}
+                        </div>
                         <div className="w-full overflow-x-auto py-2 flex justify-center custom-scrollbar">
                             <div className="min-w-[800px] text-foreground flex justify-center">
                                 <GitHubCalendar
