@@ -50,6 +50,10 @@ const GitHubContributions = () => {
     const [maxStreak, setMaxStreak] = useState(0);
     const [loading, setLoading] = useState(true);
 
+    // LeetCode State
+    const [leetcodeStats, setLeetcodeStats] = useState<any>(null);
+    const [leetcodeLoading, setLeetcodeLoading] = useState(true);
+
     useGSAP(
         () => {
             const tl = gsap.timeline({
@@ -146,7 +150,22 @@ const GitHubContributions = () => {
             }
         };
 
+        const fetchLeetcodeData = async () => {
+            try {
+                const res = await fetch('https://leetcode-api-faisalshohag.vercel.app/Anshul101/');
+                if (res.ok) {
+                    const data = await res.json();
+                    setLeetcodeStats(data);
+                }
+            } catch (error) {
+                console.error('Error fetching LeetCode data:', error);
+            } finally {
+                setLeetcodeLoading(false);
+            }
+        };
+
         fetchGitHubData();
+        fetchLeetcodeData();
     }, []);
 
     // Custom theme for the GitHub Calendar to match the website green
@@ -158,12 +177,12 @@ const GitHubContributions = () => {
     return (
         <section className="py-section" id="github-activity">
             <div className="container" ref={containerRef}>
-                <SectionTitle title="GitHub Activity" />
+                <SectionTitle title="GitHub & LeetCode Stats" />
 
                 <div className="space-y-10">
                     {/* Interactive Calendar Card */}
                     <div className="github-item bg-background-light border border-border p-8 rounded-xl flex flex-col items-center">
-                        <div className="w-full flex items-center justify-between mb-6">
+                        <div className="w-full flex items-center justify-between mb-6 flex-wrap gap-4">
                             <p className="text-xl font-anton uppercase tracking-wider text-muted-foreground">
                                 Contribution Calendar
                             </p>
@@ -199,10 +218,10 @@ const GitHubContributions = () => {
                         </div>
                     </div>
 
-                    {/* Stats & Languages cards */}
-                    <div className="grid md:grid-cols-2 gap-10">
+                    {/* Stats, Languages & LeetCode cards */}
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                         {/* Profile Stats Card */}
-                        <div className="github-item bg-background-light border border-border p-8 rounded-xl flex flex-col justify-between min-h-[300px]">
+                        <div className="github-item bg-background-light border border-border p-8 rounded-xl flex flex-col justify-between min-h-[340px]">
                             <div>
                                 <p className="text-xl font-anton uppercase tracking-wider mb-6 text-muted-foreground">
                                     GitHub Profile Stats
@@ -228,7 +247,7 @@ const GitHubContributions = () => {
                                             <p className="text-3xl font-anton text-primary mt-1">{userStats.following}</p>
                                         </div>
                                         <div>
-                                            <p className="text-xs uppercase text-muted-foreground tracking-wider">Total Repository Stars</p>
+                                            <p className="text-xs uppercase text-muted-foreground tracking-wider">Total Stars</p>
                                             <p className="text-3xl font-anton text-primary mt-1">{totalStars}</p>
                                         </div>
                                     </div>
@@ -261,7 +280,7 @@ const GitHubContributions = () => {
                         </div>
 
                         {/* Top Languages Card */}
-                        <div className="github-item bg-background-light border border-border p-8 rounded-xl flex flex-col min-h-[300px]">
+                        <div className="github-item bg-background-light border border-border p-8 rounded-xl flex flex-col min-h-[340px]">
                             <p className="text-xl font-anton uppercase tracking-wider mb-6 text-muted-foreground">
                                 Top Languages
                             </p>
@@ -279,7 +298,7 @@ const GitHubContributions = () => {
                                                 <span>{lang.name}</span>
                                                 <span className="text-primary">{lang.percentage}%</span>
                                             </div>
-                                            <div className="w-full h-2.5 bg-background rounded-full overflow-hidden">
+                                            <div className="w-full h-2 bg-background rounded-full overflow-hidden">
                                                 <div
                                                     className="h-full bg-primary"
                                                     style={{ width: `${lang.percentage}%` }}
@@ -290,6 +309,113 @@ const GitHubContributions = () => {
                                 </div>
                             ) : (
                                 <p className="text-muted-foreground m-auto">No language data found.</p>
+                            )}
+                        </div>
+
+                        {/* LeetCode Stats Card */}
+                        <div className="github-item bg-background-light border border-border p-8 rounded-xl flex flex-col justify-between min-h-[340px]">
+                            <div>
+                                <p className="text-xl font-anton uppercase tracking-wider mb-6 text-muted-foreground">
+                                    LeetCode Stats
+                                </p>
+                                {leetcodeLoading ? (
+                                    <div className="space-y-4 animate-pulse">
+                                        <div className="h-6 bg-border rounded w-3/4"></div>
+                                        <div className="h-6 bg-border rounded w-1/2"></div>
+                                        <div className="h-6 bg-border rounded w-2/3"></div>
+                                    </div>
+                                ) : leetcodeStats ? (
+                                    <div className="space-y-4">
+                                        <div className="flex justify-between items-end">
+                                            <div>
+                                                <p className="text-xs uppercase text-muted-foreground tracking-wider">Total Solved</p>
+                                                <p className="text-3xl font-anton text-yellow-500 mt-1">
+                                                    {leetcodeStats.totalSolved} <span className="text-sm font-normal text-muted-foreground">/ {leetcodeStats.totalQuestions}</span>
+                                                </p>
+                                            </div>
+                                            <div className="text-right">
+                                                <p className="text-xs uppercase text-muted-foreground tracking-wider">Global Rank</p>
+                                                <p className="text-xl font-anton text-foreground mt-1">
+                                                    {leetcodeStats.ranking?.toLocaleString()}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        {/* Easy / Medium / Hard Progress bars */}
+                                        <div className="space-y-3 pt-2">
+                                            {/* Easy */}
+                                            <div className="space-y-1">
+                                                <div className="flex justify-between text-xs font-semibold">
+                                                    <span className="text-green-500 uppercase">Easy</span>
+                                                    <span>{leetcodeStats.easySolved} / {leetcodeStats.totalEasy}</span>
+                                                </div>
+                                                <div className="w-full h-1.5 bg-background rounded-full overflow-hidden">
+                                                    <div
+                                                        className="h-full bg-green-500"
+                                                        style={{ width: `${(leetcodeStats.easySolved / leetcodeStats.totalEasy) * 100}%` }}
+                                                    ></div>
+                                                </div>
+                                            </div>
+
+                                            {/* Medium */}
+                                            <div className="space-y-1">
+                                                <div className="flex justify-between text-xs font-semibold">
+                                                    <span className="text-yellow-500 uppercase">Medium</span>
+                                                    <span>{leetcodeStats.mediumSolved} / {leetcodeStats.totalMedium}</span>
+                                                </div>
+                                                <div className="w-full h-1.5 bg-background rounded-full overflow-hidden">
+                                                    <div
+                                                        className="h-full bg-yellow-500"
+                                                        style={{ width: `${(leetcodeStats.mediumSolved / leetcodeStats.totalMedium) * 100}%` }}
+                                                    ></div>
+                                                </div>
+                                            </div>
+
+                                            {/* Hard */}
+                                            <div className="space-y-1">
+                                                <div className="flex justify-between text-xs font-semibold">
+                                                    <span className="text-red-500 uppercase">Hard</span>
+                                                    <span>{leetcodeStats.hardSolved} / {leetcodeStats.totalHard}</span>
+                                                </div>
+                                                <div className="w-full h-1.5 bg-background rounded-full overflow-hidden">
+                                                    <div
+                                                        className="h-full bg-red-500"
+                                                        style={{ width: `${(leetcodeStats.hardSolved / leetcodeStats.totalHard) * 100}%` }}
+                                                    ></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <p className="text-muted-foreground">Unable to load LeetCode stats.</p>
+                                )}
+                            </div>
+
+                            {leetcodeStats && (
+                                <div className="mt-8 pt-4 border-t border-border flex items-center gap-3">
+                                    <div className="size-10 rounded-full border border-yellow-500 flex items-center justify-center bg-yellow-500/10">
+                                        {/* Stylized LeetCode Icon */}
+                                        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-yellow-500" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M13.483 0a1.374 1.374 0 0 0-.961.414l-9.777 9.778a1.38 1.38 0 0 0 0 1.95l1.95 1.95a1.38 1.38 0 0 0 1.951 0l7.827-7.828a.426.426 0 0 1 .602 0l1.95 1.95a.426.426 0 0 1 0 .602L9.4 16.637a1.38 1.38 0 0 0 0 1.95l1.95 1.95a1.38 1.38 0 0 0 1.951 0l9.777-9.778a1.378 1.378 0 0 0 0-1.95l-7.827-7.828A1.378 1.378 0 0 0 13.483 0zm-8.4 11.536a.2.2 0 0 0-.142-.059.2.2 0 0 0-.142.059l-1.95 1.95a.2.2 0 0 0 0 .283l7.828 7.828a1.38 1.38 0 0 0 1.95 0l1.95-1.95a.2.2 0 0 0 0-.283l-7.828-7.828a.2.2 0 0 0-.142-.059z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p className="font-semibold text-foreground leading-none">LeetCode Profile</p>
+                                        <a
+                                            href="https://leetcode.com/u/Anshul101/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-xs text-yellow-500 hover:underline leading-normal flex items-center gap-1 mt-1"
+                                        >
+                                            @Anshul101
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-external-link">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                                <polyline points="15 3 21 3 21 9"/>
+                                                <line x1="10" y1="14" x2="21" y2="3"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
                             )}
                         </div>
                     </div>
