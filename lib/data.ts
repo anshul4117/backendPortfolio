@@ -298,11 +298,28 @@ export const CERTIFICATIONS = [
         issuer: 'Google Cloud',
     },
     {
-        title: 'AI Impact Summit Buildathon',
-        issuer: 'GUVI & HCL',
-    },
-    {
         title: 'GDG Cloud New Delhi HackFest 2.0',
         issuer: 'GDG New Delhi',
+        link: 'https://www.creadefy.com/verify/CERT-6B44CEB6-93A5-4894',
+    },
+    {
+        title: 'SQL Basic',
+        issuer: 'HackerRank',
+        link: 'https://www.hackerrank.com/certificates/c1338d22656b',
+    },
+    {
+        title: 'AI Impact Summit Buildathon',
+        issuer: 'GUVI & HCL',
+        link: 'https://www.guvi.in/verify-certificate?id=6lT324S7zU97218C30',
+    },
+    {
+        title: 'Agentic AI Day',
+        issuer: 'Hack2Skill',
+        link: 'https://certificate.hack2skill.com/legacy/2025H2S06AID-I16841',
+    },
+    {
+        title: 'AWS Academy Cloud Foundations',
+        issuer: 'AWS by Forage',
+        link: 'https://www.theforage.com/completion-certificates/pmnMSL4QiQ9JCgE3W/kkE9HyeNcw6rwCRGw_pmnMSL4QiQ9JCgE3W_69577d42beda68c4730956bc_1767342320860_completion_certificate.pdf',
     },
 ];
