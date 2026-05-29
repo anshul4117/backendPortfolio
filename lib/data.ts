@@ -318,7 +318,7 @@ export const CERTIFICATIONS = [
         link: 'https://certificate.hack2skill.com/legacy/2025H2S06AID-I16841',
     },
     {
-        title: 'AWS Academy Cloud Foundations',
+        title: 'AWS Solutions Architecture Job Simulation',
         issuer: 'AWS by Forage',
         link: 'https://www.theforage.com/completion-certificates/pmnMSL4QiQ9JCgE3W/kkE9HyeNcw6rwCRGw_pmnMSL4QiQ9JCgE3W_69577d42beda68c4730956bc_1767342320860_completion_certificate.pdf',
     },
