@@ -153,10 +153,10 @@ export const PROJECTS: IProject[] = [
       
       Key Features:<br/>
       <ul>
-        <li>🔥 Developer Matching: Smart matching system connecting developers with complementary skills.</li>
-        <li>👤 Profile Management: Detailed user profiles showcasing bio, experience, and interests.</li>
-        <li>💬 Real-Time Interaction: Instant chat for match interactions built with Socket.io.</li>
-        <li>🛡️ Secure Authentication: Safe session management using JWT cookies.</li>
+        <li>Developer Matching: Smart matching system connecting developers with complementary skills.</li>
+        <li>Profile Management: Detailed user profiles showcasing bio, experience, and interests.</li>
+        <li>Real-Time Interaction: Instant chat for match interactions built with Socket.io.</li>
+        <li>Secure Authentication: Safe session management using JWT cookies.</li>
       </ul><br/>
       
       Technical Highlights:
@@ -170,10 +170,10 @@ export const PROJECTS: IProject[] = [
       Backend & API Developer <br/>
       Engineered the entire backend service:
       <ul>
-        <li>✅ API Development: Developed secure REST API endpoints with Express.js.</li>
-        <li>✅ Database: Created scalable MongoDB models and queries.</li>
-        <li>✅ Caching: Handled caching of critical data points with Redis.</li>
-        <li>✅ Real-Time: Set up instant message event loops using Socket.io.</li>
+        <li>API Development: Developed secure REST API endpoints with Express.js.</li>
+        <li>Database: Created scalable MongoDB models and queries.</li>
+        <li>Caching: Handled caching of critical data points with Redis.</li>
+        <li>Real-Time: Set up instant message event loops using Socket.io.</li>
       </ul>
       `,
         techStack: [
@@ -201,15 +201,15 @@ export const PROJECTS: IProject[] = [
       
       Key Features:<br/>
       <ul>
-        <li>🔑 Role-based Management: Admin & User levels to manage and publish posts with fine-grained access control.</li>
-        <li>⚡ Redis Caching: Accelerated reads with ioredis-powered cache-aside pattern, reducing DB query overhead.</li>
-        <li>🔒 Secure Access: JWT authentication with bcrypt password hashing and security hardening via Helmet, CORS, rate-limiting, and XSS protection.</li>
-        <li>📱 Responsive UI: Premium, animated interface built with React 19, Tailwind CSS 4, shadcn/ui (Radix UI), Framer Motion, and Spline 3D visuals.</li>
-        <li>📊 Analytics Dashboard: Interactive charts and insights powered by Recharts.</li>
-        <li>🖼️ Cloud Media: Image uploads handled via Cloudinary + Multer with optimized delivery.</li>
-        <li>📧 Email Notifications: Transactional emails via Nodemailer for account verification and updates.</li>
-        <li>📝 Form Validation: Robust client-side validation using React Hook Form + Zod schemas.</li>
-        <li>📖 API Documentation: Auto-generated Swagger/OpenAPI docs for every endpoint.</li>
+        <li>Role-based Management: Admin & User levels to manage and publish posts with fine-grained access control.</li>
+        <li>Redis Caching: Accelerated reads with ioredis-powered cache-aside pattern, reducing DB query overhead.</li>
+        <li>Secure Access: JWT authentication with bcrypt password hashing and security hardening via Helmet, CORS, rate-limiting, and XSS protection.</li>
+        <li>Responsive UI: Premium, animated interface built with React 19, Tailwind CSS 4, shadcn/ui (Radix UI), Framer Motion, and Spline 3D visuals.</li>
+        <li>Analytics Dashboard: Interactive charts and insights powered by Recharts.</li>
+        <li>Cloud Media: Image uploads handled via Cloudinary + Multer with optimized delivery.</li>
+        <li>Email Notifications: Transactional emails via Nodemailer for account verification and updates.</li>
+        <li>Form Validation: Robust client-side validation using React Hook Form + Zod schemas.</li>
+        <li>API Documentation: Auto-generated Swagger/OpenAPI docs for every endpoint.</li>
       </ul><br/>
       
       Technical Highlights:
@@ -226,11 +226,11 @@ export const PROJECTS: IProject[] = [
       Full-Stack Developer <br/>
       Owned end-to-end architecture, design, and implementation:
       <ul>
-        <li>✅ Backend: Architected Express 5 API with MongoDB, Redis caching, JWT auth, and production security middleware (Helmet, CORS, rate-limit, XSS).</li>
-        <li>✅ Frontend: Built a premium React 19 + Vite 7 SPA with Tailwind CSS 4, shadcn/ui components, Framer Motion animations, and Spline 3D visuals.</li>
-        <li>✅ Media & Email: Integrated Cloudinary for image management and Nodemailer for transactional emails.</li>
-        <li>✅ DevOps: Dockerized services with Docker Compose, structured logging with Pino, and Swagger API documentation.</li>
-        <li>✅ Testing: Built comprehensive test suites using Jest + Supertest for reliable CI/CD.</li>
+        <li>Backend: Architected Express 5 API with MongoDB, Redis caching, JWT auth, and production security middleware (Helmet, CORS, rate-limit, XSS).</li>
+        <li>Frontend: Built a premium React 19 + Vite 7 SPA with Tailwind CSS 4, shadcn/ui components, Framer Motion animations, and Spline 3D visuals.</li>
+        <li>Media & Email: Integrated Cloudinary for image management and Nodemailer for transactional emails.</li>
+        <li>DevOps: Dockerized services with Docker Compose, structured logging with Pino, and Swagger API documentation.</li>
+        <li>Testing: Built comprehensive test suites using Jest + Supertest for reliable CI/CD.</li>
       </ul>
       `,
         techStack: [
