@@ -28,9 +28,14 @@ const ContactTerminal = () => {
 
     const terminalEndRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
+    const isFirstRender = useRef(true);
 
     // Auto scroll to bottom of terminal
     useEffect(() => {
+        if (isFirstRender.current) {
+            isFirstRender.current = false;
+            return;
+        }
         terminalEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }, [history]);
 
@@ -178,7 +183,6 @@ const ContactTerminal = () => {
                                 onKeyDown={handleKeyDown}
                                 className="flex-grow bg-transparent outline-none text-foreground border-none p-0 focus:ring-0"
                                 placeholder="Type a command..."
-                                autoFocus
                                 autoComplete="off"
                                 autoCorrect="off"
                                 autoCapitalize="off"
