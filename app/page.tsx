@@ -5,6 +5,7 @@ import Skills from './_components/Skills';
 import ProjectList from './_components/ProjectList';
 import EducationAndCertifications from './_components/EducationAndCertifications';
 import GitHubContributions from './_components/GitHubContributions';
+import ContactTerminal from './_components/ContactTerminal';
 
 export default function Home() {
     return (
@@ -16,6 +17,7 @@ export default function Home() {
             <EducationAndCertifications />
             <ProjectList />
             <GitHubContributions />
+            <ContactTerminal />
         </div>
     );
 }
