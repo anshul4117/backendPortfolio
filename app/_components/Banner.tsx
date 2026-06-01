@@ -1,17 +1,18 @@
 'use client';
 import ArrowAnimation from '@/components/ArrowAnimation';
 import Button from '@/components/Button';
-import { GENERAL_INFO } from '@/lib/data';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
-import React from 'react';
+import React, { useState } from 'react';
 import { sendGAEvent } from '@next/third-parties/google';
+import ContactWizardModal from './ContactWizardModal';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const Banner = () => {
     const containerRef = React.useRef<HTMLDivElement>(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     // move the content a little up on scroll
     useGSAP(
@@ -54,11 +55,13 @@ const Banner = () => {
                         . A Backend Developer specializing in building high-performance distributed architectures, designing resilient RESTful APIs, implementing memory-efficient caching strategies, and deploying containerized services using Node.js, React.js, MongoDB, Docker, and AWS.
                     </p>
                     <Button
-                        as="link"
-                        href={`mailto:${GENERAL_INFO.email}`}
+                        as="button"
                         variant="primary"
                         className="mt-9 banner-button slide-up-and-fade"
-                        onClick={() => sendGAEvent({ event: 'contact_click', value: 'lets_talk_email' })}
+                        onClick={() => {
+                            sendGAEvent({ event: 'contact_click', value: 'lets_talk_wizard' });
+                            setIsModalOpen(true);
+                        }}
                     >
                         Let&apos;s Talk
                     </Button>
@@ -98,6 +101,7 @@ const Banner = () => {
                     </div>
                 </div>
             </div>
+            <ContactWizardModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </section>
     );
 };
