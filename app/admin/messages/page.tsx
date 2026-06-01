@@ -43,7 +43,7 @@ export default function AdminMessagesPage() {
         setLoading(true);
         setError('');
         try {
-            const res = await fetch('/app/../api/messages');
+            const res = await fetch('/api/messages');
             if (res.status === 401) {
                 router.push('/admin/login');
                 return;
@@ -71,7 +71,7 @@ export default function AdminMessagesPage() {
 
     const handleLogout = async () => {
         try {
-            await fetch('/app/../api/auth/logout', { method: 'POST' });
+            await fetch('/api/auth/logout', { method: 'POST' });
             router.push('/admin/login');
         } catch (err) {
             console.error('Logout error:', err);
@@ -82,7 +82,7 @@ export default function AdminMessagesPage() {
         if (!confirm('Are you sure you want to permanently delete this message?')) return;
         setDeletingId(id);
         try {
-            const res = await fetch('/app/../api/messages', {
+            const res = await fetch('/api/messages', {
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ id }),

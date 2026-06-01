@@ -163,7 +163,7 @@ export default function ContactWizardModal({ isOpen, onClose }: ContactWizardMod
         setSubmitError('');
 
         try {
-            const res = await fetch('/app/../api/messages', {
+            const res = await fetch('/api/messages', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
