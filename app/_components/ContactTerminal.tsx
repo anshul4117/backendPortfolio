@@ -142,7 +142,7 @@ const ContactTerminal = () => {
 
                 <div 
                     onClick={handleTerminalClick}
-                    className="w-full max-w-4xl mx-auto rounded-xl overflow-hidden border border-border shadow-2xl bg-black font-mono text-sm md:text-base cursor-text flex flex-col min-h-[420px]"
+                    className="w-full max-w-4xl mx-auto rounded-xl overflow-hidden border border-border shadow-2xl bg-black font-mono text-sm md:text-base cursor-text flex flex-col h-[450px]"
                 >
                     {/* Terminal Title Bar */}
                     <div className="bg-neutral-900 px-4 py-3 flex items-center justify-between border-b border-border select-none">
@@ -156,7 +156,7 @@ const ContactTerminal = () => {
                     </div>
 
                     {/* Terminal Body */}
-                    <div className="p-6 flex-grow flex flex-col gap-2 overflow-y-auto max-h-[400px] custom-scrollbar text-green-400">
+                    <div className="p-6 flex-grow flex flex-col gap-2 overflow-y-auto custom-scrollbar text-green-400">
                         <div className="space-y-1">
                             {history.map((log, idx) => {
                                 let styleClass = 'text-green-400';

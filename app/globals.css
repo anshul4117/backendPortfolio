@@ -55,3 +55,19 @@
         @apply pl-5 mt-2 list-disc;
     }
 }
+
+/* Custom Green Scrollbar for Terminal */
+.custom-scrollbar::-webkit-scrollbar {
+    display: block !important;
+    width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3) !important;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(34, 197, 94, 0.4) !important;
+    border-radius: 9999px !important;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(34, 197, 94, 0.7) !important;
+}
