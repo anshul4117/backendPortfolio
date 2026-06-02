@@ -156,7 +156,7 @@ const ContactTerminal = () => {
                     </div>
 
                     {/* Terminal Body */}
-                    <div className="p-6 flex-grow flex flex-col gap-2 overflow-y-auto custom-scrollbar text-green-400">
+                    <div data-lenis-prevent className="p-6 flex-grow flex flex-col gap-2 overflow-y-auto custom-scrollbar text-green-400">
                         <div className="space-y-1">
                             {history.map((log, idx) => {
                                 let styleClass = 'text-green-400';
