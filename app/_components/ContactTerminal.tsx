@@ -75,7 +75,7 @@ const ContactTerminal = () => {
                 break;
             case 'projects':
                 newHistory.push(
-                    { type: 'output', text: '1. MyBlog Application - React 19 + Express 5 Blog Platform' },
+                    { type: 'output', text: '1. Xdrop - React 19 + Express 5 Blog Platform' },
                     { type: 'output', text: '2. Dev Tinder - Developer matching app using Socket.io' },
                     { type: 'output', text: 'Type "about" to learn more.' }
                 );

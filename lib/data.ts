@@ -192,10 +192,10 @@ export const PROJECTS: IProject[] = [
         ],
     },
     {
-        title: 'MyBlog Application',
-        slug: 'my-blog',
-        liveUrl: 'https://github.com/anshul4117',
-        year: 2024,
+        title: 'Xdrop',
+        slug: 'xdrop',
+        liveUrl: 'https://xdrop.vercel.app/',
+        year: 'March 2025 – Present',
         description: `
       A production-grade, full-stack blogging platform built with a modern React 19 frontend and a hardened Express 5 backend. Designed for scalability, security, and developer experience from day one. <br/> <br/>
       
@@ -248,10 +248,10 @@ export const PROJECTS: IProject[] = [
             'Cloudinary',
             'Jest',
         ],
-        thumbnail: '/projects/thumbnail/my-blog.png',
-        longThumbnail: '/projects/long/my-blog.png',
+        thumbnail: '/projects/thumbnail/xdrop.png',
+        longThumbnail: '/projects/long/xdrop.png',
         images: [
-            '/projects/images/my-blog-1.png',
+            '/projects/images/xdrop-1.png',
         ],
     },
 ];
