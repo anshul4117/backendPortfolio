@@ -121,8 +121,28 @@ const Navbar = () => {
                                     <li key={link.name}>
                                         <button
                                             onClick={() => {
-                                                router.push(link.url);
                                                 setIsMenuOpen(false);
+                                                if (link.url === '/') {
+                                                    if (window.location.pathname === '/') {
+                                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                    } else {
+                                                        router.push('/');
+                                                    }
+                                                } else if (link.url.startsWith('/#')) {
+                                                    const targetId = link.url.replace('/#', '');
+                                                    if (window.location.pathname === '/') {
+                                                        const el = document.getElementById(targetId);
+                                                        if (el) {
+                                                            el.scrollIntoView({ behavior: 'smooth' });
+                                                        } else {
+                                                            router.push(link.url);
+                                                        }
+                                                    } else {
+                                                        router.push(link.url);
+                                                    }
+                                                } else {
+                                                    router.push(link.url);
+                                                }
                                             }}
                                             className="group text-xl flex items-center gap-3"
                                         >

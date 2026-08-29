@@ -7,6 +7,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
+import Image from 'next/image';
 import { useRef } from 'react';
 
 interface Props {
@@ -176,26 +177,28 @@ const ProjectDetails = ({ project }: Props) => {
                 </div>
 
                 <div
-                    className="fade-in-later relative flex flex-col gap-2 max-w-[800px] mx-auto"
+                    className="fade-in-later relative flex flex-col gap-4 max-w-[800px] mx-auto"
                     id="images"
                 >
                     {project.images.map((image) => (
                         <div
                             key={image}
-                            className="group relative w-full aspect-[750/400] bg-background-light"
-                            style={{
-                                backgroundImage: `url(${image})`,
-                                backgroundSize: 'cover',
-                                backgroundPosition: 'center 50%',
-                                backgroundRepeat: 'no-repeat',
-                            }}
+                            className="group relative w-full aspect-[16/10] bg-background-light border border-border rounded-xl p-2 overflow-hidden shadow-lg transition-all duration-500 hover:border-primary/40 flex items-center justify-center"
                         >
+                            <Image
+                                src={image}
+                                alt={`${project.title} screenshot`}
+                                fill
+                                sizes="(max-width: 1280px) 750px, 800px"
+                                className="object-contain w-full h-full p-1 transform-gpu transition-all duration-500 ease-out group-hover:scale-[1.04] group-hover:-translate-y-1 group-hover:brightness-105 motion-reduce:transform-none motion-reduce:transition-none"
+                            />
                             <a
                                 href={image}
                                 target="_blank"
-                                className="absolute top-4 right-4 bg-background/70 text-foreground size-12 inline-flex justify-center items-center transition-all opacity-0 hover:bg-primary hover:text-primary-foreground group-hover:opacity-100"
+                                rel="noreferrer noopener"
+                                className="absolute top-4 right-4 z-10 bg-background/80 backdrop-blur-sm text-foreground size-11 rounded-lg inline-flex justify-center items-center transition-all duration-300 opacity-0 hover:bg-primary hover:text-primary-foreground group-hover:opacity-100 shadow-md"
                             >
-                                <ExternalLink />
+                                <ExternalLink size={20} />
                             </a>
                         </div>
                     ))}

@@ -121,7 +121,7 @@ export default function ContactWizardModal({ isOpen, onClose }: ContactWizardMod
                 template = `Hi Anshul,\n\nI'm ${name || 'Recruiter'}${companyStr}. I came across your portfolio and was impressed by your backend engineering stack—especially your work with Node.js, Redis, MongoDB, and Docker.\n\nWe have an open role that aligns perfectly with your skills. Let's schedule a brief call to discuss this opportunity further.\n\nBest regards,\n${name || 'Best regards'}`;
                 break;
             case 'collaboration':
-                template = `Hi Anshul,\n\nI'm ${name || 'there'}${companyStr}. I saw your projects like Dev Tinder and Xdrop. I'm currently working on a backend system and would love to collaborate or exchange ideas with you on scalability and system design.\n\nLet me know if you'd be open to a chat!\n\nBest,\n${name || 'Best'}`;
+                template = `Hi Anshul,\n\nI'm ${name || 'there'}${companyStr}. I saw your projects like AI Career Agent and Xdrop. I'm currently working on a backend system and would love to collaborate or exchange ideas with you on scalability and system design.\n\nLet me know if you'd be open to a chat!\n\nBest,\n${name || 'Best'}`;
                 break;
             case 'tech_chat':
                 template = `Hi Anshul,\n\nI'm ${name || 'there'}. I'm also into backend systems, Express, databases, and microservices. I really liked your interactive guestbook terminal and wanted to connect to talk about system architecture, performance optimization, and Kafka.\n\nCheers,\n${name || 'Cheers'}`;

@@ -152,7 +152,7 @@ const GitHubContributions = () => {
 
         const fetchLeetcodeData = async () => {
             try {
-                const res = await fetch('https://leetcode-api-faisalshohag.vercel.app/Anshul101/');
+                const res = await fetch('/api/leetcode');
                 if (res.ok) {
                     const data = await res.json();
                     setLeetcodeStats(data);

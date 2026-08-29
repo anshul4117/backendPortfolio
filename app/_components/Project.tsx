@@ -108,17 +108,19 @@ const Project = ({ index, project, selectedProject, onMouseEnter }: Props) => {
             onMouseLeave={handleMouseLeave}
         >
             {selectedProject === null && (
-                <Image
-                    src={project.thumbnail}
-                    alt="Project"
-                    width="300"
-                    height="200"
-                    className={cn(
-                        'w-full object-cover mb-6 aspect-[3/2] object-top',
-                    )}
-                    key={project.slug}
-                    loading="lazy"
-                />
+                <div className="w-full mb-6 aspect-[16/10] bg-background-light border border-border rounded-lg p-2 overflow-hidden flex items-center justify-center group-hover:border-primary/40 transition-all duration-500 wave-reveal-enter group-hover:wave-reveal-active">
+                    <Image
+                        src={project.thumbnail}
+                        alt={`${project.title} Preview`}
+                        width="600"
+                        height="375"
+                        className={cn(
+                            'w-full h-full object-contain object-center transform-gpu transition-all duration-500 ease-out group-hover:scale-[1.04] group-hover:-translate-y-1 group-hover:brightness-105 motion-reduce:transform-none motion-reduce:transition-none',
+                        )}
+                        key={project.slug}
+                        loading="lazy"
+                    />
+                </div>
             )}
             <div className="flex gap-2 md:gap-5">
                 <div className="font-anton text-muted-foreground">

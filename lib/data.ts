@@ -144,51 +144,64 @@ export const MY_STACK = {
 
 export const PROJECTS: IProject[] = [
     {
-        title: 'Dev Tinder',
-        slug: 'dev-tinder',
-        liveUrl: 'https://github.com/anshul4117',
-        year: 2024,
+        title: 'AI Career Agent',
+        slug: 'ai-career-agent',
+        sourceCode: 'https://github.com/anshul4117',
+        liveUrl: 'https://ai-career-agent-web.vercel.app/',
+        year: 2026,
         description: `
-      A full-stack developer networking platform inspired by Tinder, designed to connect developers based on their technical interests, experience level, and collaboration goals. <br/> <br/>
+      An AI-powered career management platform that brings job opportunities from multiple job boards and company career pages into one unified platform, helping candidates discover relevant jobs, understand their fit, optimize their resumes, and manage applications from a single workspace. <br/> <br/>
       
       Key Features:<br/>
       <ul>
-        <li>Developer Matching: Smart matching system connecting developers with complementary skills.</li>
-        <li>Profile Management: Detailed user profiles showcasing bio, experience, and interests.</li>
-        <li>Real-Time Interaction: Instant chat for match interactions built with Socket.io.</li>
-        <li>Secure Authentication: Safe session management using JWT cookies.</li>
+        <li>Unified Job Discovery: Aggregates job opportunities from multiple job sources and company career pages into one platform.</li>
+        <li>AI Resume Parsing: Extracts candidate skills, education, experience, and projects from uploaded resumes.</li>
+        <li>AI Job Matching: Analyzes candidate profiles against job requirements and provides personalized match insights.</li>
+        <li>Skill Gap Analysis: Identifies missing or weak skills based on target job requirements.</li>
+        <li>Resume Optimization: Provides ATS-focused keyword and resume improvement suggestions.</li>
+        <li>Cover Letter Generator: Generates personalized cover letters based on the candidate profile and target job.</li>
+        <li>Application Tracking: Allows candidates to save jobs, track applications, and manage their job-search workflow.</li>
+        <li>Resume Management: Supports resume uploads, versions, document details, and resume history.</li>
       </ul><br/>
       
       Technical Highlights:
       <ul>
-        <li>Designed robust database collections and relationships in MongoDB/Mongoose.</li>
-        <li>Integrated Redis caching to store session tokens and frequent profile lookups.</li>
-        <li>Containerized backend services with Docker to streamline local environment setup.</li>
+        <li>Designed a modular full-stack architecture separating frontend features, backend services, data models, and AI workflows.</li>
+        <li>Implemented authentication and protected application routes for secure candidate data management.</li>
+        <li>Integrated PostgreSQL with Prisma for structured career, resume, job, and application data.</li>
+        <li>Designed Redis and BullMQ-based background processing architecture for asynchronous jobs and AI/data processing workflows.</li>
+        <li>Built the system to support multiple job sources while keeping source-specific collection logic isolated and extensible.</li>
       </ul>
       `,
         role: `
-      Backend & API Developer <br/>
-      Engineered the entire backend service:
+      Full-Stack & Backend Developer <br/>
+      Engineered the platform architecture and core application workflows:
       <ul>
-        <li>API Development: Developed secure REST API endpoints with Express.js.</li>
-        <li>Database: Created scalable MongoDB models and queries.</li>
-        <li>Caching: Handled caching of critical data points with Redis.</li>
-        <li>Real-Time: Set up instant message event loops using Socket.io.</li>
+        <li>Platform Architecture: Designed the modular architecture for job discovery, candidate profiles, resumes, applications, and AI features.</li>
+        <li>Backend & APIs: Designed REST APIs and backend services for core career-management workflows.</li>
+        <li>Database: Designed relational data models for users, profiles, resumes, jobs, and applications using PostgreSQL and Prisma.</li>
+        <li>AI Integration: Built AI-powered workflows for resume parsing, job matching, resume optimization, and cover-letter generation.</li>
+        <li>Background Processing: Designed asynchronous processing using Redis and BullMQ for long-running tasks.</li>
+        <li>Frontend: Built responsive dashboard workflows and interactive career-management interfaces using Next.js, React, and TypeScript.</li>
       </ul>
       `,
         techStack: [
+            'Next.js',
+            'React.js',
+            'TypeScript',
             'Node.js',
             'Express.js',
-            'React.js',
-            'MongoDB',
+            'PostgreSQL',
+            'Prisma',
             'Redis',
-            'Socket.io',
+            'BullMQ',
             'Docker',
+            'OpenAI',
         ],
-        thumbnail: '/projects/thumbnail/dev-tinder.png',
-        longThumbnail: '/projects/long/dev-tinder.png',
+        thumbnail: '/projects/images/ai-career-agent.png',
+        longThumbnail: '/projects/images/ai-career-agent.png',
         images: [
-            '/projects/images/dev-tinder-1.png',
+            '/projects/images/ai-career-agent-1.png',
         ],
     },
     {
@@ -248,10 +261,10 @@ export const PROJECTS: IProject[] = [
             'Cloudinary',
             'Jest',
         ],
-        thumbnail: '/projects/thumbnail/xdrop.png',
-        longThumbnail: '/projects/long/xdrop.png',
+        thumbnail: '/projects/images/xDrop.png',
+        longThumbnail: '/projects/images/xDrop.png',
         images: [
-            '/projects/images/xdrop-1.png',
+            '/projects/images/xDrop.png',
         ],
     },
 ];

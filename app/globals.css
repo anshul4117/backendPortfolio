@@ -35,6 +35,14 @@
 }
 
 @layer base {
+    html {
+        scroll-padding-top: 80px;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+        html {
+            scroll-behavior: smooth;
+        }
+    }
     ::-webkit-scrollbar {
         display: none;
     }
@@ -63,6 +71,32 @@
 }
 .custom-scrollbar::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Liquid Wave Reveal Animation for Project Cards */
+.wave-reveal-enter {
+    clip-path: ellipse(0% 0% at 50% 100%);
+    opacity: 0;
+    transform: scale(0.93) translateY(10px);
+    transition:
+        clip-path 450ms cubic-bezier(0.16, 1, 0.3, 1),
+        transform 450ms cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 300ms ease-out;
+}
+
+.wave-reveal-active {
+    clip-path: ellipse(160% 160% at 50% 50%);
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wave-reveal-enter,
+    .wave-reveal-active {
+        clip-path: none !important;
+        transform: none !important;
+        transition: opacity 200ms ease-out !important;
+    }
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
     background: rgba(34, 197, 94, 0.4) !important;
