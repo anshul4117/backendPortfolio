@@ -13,6 +13,7 @@ export const GENERAL_INFO = {
 export const SOCIAL_LINKS = [
     { name: 'github', url: 'https://github.com/anshul4117' },
     { name: 'linkedin', url: 'https://www.linkedin.com/in/anshul-ab7135245/' },
+    { name: 'instagram', url: 'https://www.instagram.com/ur_.anshul/' },
     { name: 'leetcode', url: 'https://leetcode.com/u/Anshul101/' },
     { name: 'hashnode', url: 'https://hashnode.com/@anshul41171' },
 ];

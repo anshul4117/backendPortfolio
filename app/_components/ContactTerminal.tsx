@@ -112,7 +112,8 @@ const ContactTerminal = () => {
                 newHistory.push(
                     { type: 'output', text: 'Email: anshul41171@gmail.com' },
                     { type: 'output', text: 'GitHub: https://github.com/anshul4117' },
-                    { type: 'output', text: 'LinkedIn: https://www.linkedin.com/in/anshul-ab7135245/' }
+                    { type: 'output', text: 'LinkedIn: https://www.linkedin.com/in/anshul-ab7135245/' },
+                    { type: 'output', text: 'Instagram: https://www.instagram.com/ur_.anshul/' }
                 );
                 break;
             case '':
